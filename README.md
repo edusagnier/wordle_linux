@@ -1,2 +1,3 @@
-# wordle_linux
-A wordle game with mysql server
+# Wordle on bash
+
+# A wordle game with mysql server and bash script.
