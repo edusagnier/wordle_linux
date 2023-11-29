@@ -35,12 +35,12 @@ This repository contains instructions for installing MySQL on different distribu
   - GRANT ALL PRIVILEGES ON wordle_english.* TO 'user'@'localhost'; -
 
 9. Modify scripts to your user and password
-   - result=`mysql -u enti -penti -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" -->
+   - result=`mysql -u enti -penti -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" --> -
    - result=`mysql -u 'your_user' -p'your_password' -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" -
-   - Like this on all the scipts you want to use!
+   - Like this on all the scipts you want to use! -
 
 10. Change paths on the game script
-   - cd /home/edusagnier/wordle/english/ --> cd /your_path/wordle/english/
+   - cd /home/edusagnier/wordle/english/ --> cd /your_path/wordle/english/ -
 
 11. Game is ready to play
     - In case you want to play both languages run play_selecting_language.sh to select everytime the language to play -
@@ -75,12 +75,12 @@ This repository contains instructions for installing MySQL on different distribu
   - GRANT ALL PRIVILEGES ON wordle_english.* TO 'user'@'localhost'; -
 
 9. Modify scripts to your user and password
-   - result=`mysql -u enti -penti -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" -->
+   - result=`mysql -u enti -penti -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" --> -
    - result=`mysql -u 'your_user' -p'your_password' -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" -
-   - Like this on all the scipts you want to use!
+   - Like this on all the scipts you want to use! -
 
 10. Change paths on the game script
-   - cd /home/edusagnier/wordle/english/ --> cd /your_path/wordle/english/
+   - cd /home/edusagnier/wordle/english/ --> cd /your_path/wordle/english/ -
 
 11. Game is ready to play
     - In case you want to play both languages run play_selecting_language.sh to select everytime the language to play -
@@ -114,12 +114,12 @@ This repository contains instructions for installing MySQL on different distribu
   - GRANT ALL PRIVILEGES ON wordle_english.* TO 'user'@'localhost'; -
 
 9. Modify scripts to your user and password
-   - result=`mysql -u enti -penti -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" -->
+   - result=`mysql -u enti -penti -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" --> -
    - result=`mysql -u 'your_user' -p'your_password' -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" -
-   - Like this on all the scipts you want to use!
+   - Like this on all the scipts you want to use! -
 
 10. Change paths on the game script
-   - cd /home/edusagnier/wordle/english/ --> cd /your_path/wordle/english/
+   - cd /home/edusagnier/wordle/english/ --> cd /your_path/wordle/english/ -
 
 11. Game is ready to play
     - In case you want to play both languages run play_selecting_language.sh to select everytime the language to play -
