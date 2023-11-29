@@ -1,7 +1,6 @@
 #!/bin/bash
-cd /home/enti/wordle/
+cd /home/edusagnier/wordle_linux/spanish/
 
-INTENTOS=5
 RONDAS_GANADAS=0
 
 RED='\033[0;31m'
@@ -57,6 +56,7 @@ ELIGIR_PALABRA() {
 
 
 JUEGO() {
+    INTENTOS=5
     while [[ $INTENTOS -gt 0 && $RESPUESTA != $PALABRA ]]
 	do
         read -p "Ingresa tu RESPUESTA: " RESPUESTA 

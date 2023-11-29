@@ -1,81 +1,79 @@
-DROP DATABASE IF EXISTS wordle;
-CREATE DATABASE wordle;
+DROP DATABASE IF EXISTS wordle_english;
+CREATE DATABASE wordle_english;
 
+/* Eliminación de datos */
+DROP TABLE IF EXISTS wordle_english.words3;
+DROP TABLE IF EXISTS wordle_english.words4;
+DROP TABLE IF EXISTS wordle_english.words5;
+DROP TABLE IF EXISTS wordle_english.words6;
 
-/*Eliminacion de datos*/
-DROP TABLE IF EXISTS wordle.palabras3;
-DROP TABLE IF EXISTS wordle.palabras4;
-DROP TABLE IF EXISTS wordle.palabras5;
-DROP TABLE IF EXISTS wordle.palabras6;
-
-
-/* Creación de tabla de wordle.palabras3 */
-CREATE TABLE wordle.palabras3 (
-    id_palabra3 INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    palabra3 VARCHAR (3) NOT NULL
+/* Creación de la tabla wordle_english.words3 */
+CREATE TABLE wordle_english.words3 (
+    id_word3 INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    word3 VARCHAR (3) NOT NULL
 );
-INSERT INTO wordle.palabras3 (palabra3)
-VALUES
-('sol'),('mes'),('luz'),('mar'),('pan'),('pez'),('sol'),('pie'),('dos'),('rey'),('sal'),('cal'),('mal'),
-('feo'),('ira'),('era'),('son'),('mas'),('bue'),('vos'),('mil'),('ver'),('dar'),('vez'),('tan'),('uno'),
-('dos'),('feo'),('año'),('dar'),('ray'),('sol'),('uní'),('fue'),('soy'),('zoo'),('mal'),('soy'),('sol'),
-('ida'),('dio'),('fea'),('dar'),('ser'),('día'),('dos'),('sol'),('mar'),('sal'),('hoy'),('cal'),('par'),
-('rey'),('rey'),('ser'),('uva'),('oro'),('pan'),('fue'),('rey'),('mes'),('luz'),('mes'),('feo'),('ves'),
-('dio'),('era'),('rey'),('son'),('dio'),('sol'),('yog'),('mes'),('dos'),('mal'),('año'),('vos'),('mes'),
-('sol'),('mil'),('vas'),('vez'),('luz'),('sol'),('vez'),('día'),('dio'),('ves'),('uní'),('más'),('son'),
-('ray'),('son'),('era'),('dos'),('dar'),('mes'),('yog'),('mar'),('era');
+INSERT INTO wordle_english.words3 (word3)
+VALUES 
+('sun'),('cat'),('dog'),('car'),('cup'),('sky'),('owl'),('bar'),('key'),('hot'),('pen'),('run'),
+('eat'),('bed'),('fly'),('cry'),('ink'),('man'),('fan'),('arm'),('map'),('sea'),('dry'),('wet'),
+('fit'),('fun'),('win'),('new'),('old'),('big'),('cut'),('dig'),('hat'),('mad'),('sad'),('tan'),
+('gap'),('egg'),('jaw'),('kid'),('law'),('mud'),('nap'),('oar'),('pit'),('rat'),('saw'),('tap'),
+('van'),('wax'),('yet'),('zoo'),('nod'),('jam'),('lid'),('peg'),('rye'),('vim'),('wed'),('toy'),
+('zip'),('wig'),('vet'),('jug'),('ivy'),('hum'),('gym'),('emu'),('dye'),('bow'),('bam'),('bud'),
+('dam'),('gig'),('hog'),('ivy'),('jug'),('lad'),('mat'),('mob'),('nap'),('opt'),('pep'),('pop'),
+('rug'),('ski'),('tab'),('vim'),('cry'),('yam'),('sit'),('spy'),('raw'),('oat'),('ram'),('put');
 
-
-/* Creación de tabla de wordle.palabras4 */
-CREATE TABLE wordle.palabras4 (
-    id_palabra4 INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    palabra4 VARCHAR (4) NOT NULL
+/* Creación de la tabla wordle_english.words4 */
+CREATE TABLE wordle_english.words4 (
+    id_word4 INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    word4 VARCHAR (4) NOT NULL
 );
-INSERT INTO wordle.palabras4 (palabra4)
-VALUES
-('sola'),('mesa'),('mora'),('malo'),('pana'),('piel'),('paz'),('puas'),('vino'),('pedo'),('puro'),('pino'),
-('bien'),('iran'),('cafe'),('fino'),('pavo'),('solo'),('cien'),('nuez'),('muro'),('auto'),('bufo'),('riño'),
-('pozo'),('sano'),('zeta'),('vara'),('duna'),('coco'),('tina'),('lona'),('mudo'),('duro'),('años'),('alma'),
-('lomo'),('dios'),('roca'),('miga'),('pila'),('ruín'),('judo'),('burl'),('será'),('lote'),('suda'),('feto'),
-('seda'),('dedo'),('cero'),('vaso'),('buho'),('zumo'),('elmo'),('loco'),('fosa'),('vino'),('moho'),('cuna'),
-('ruin'),('será'),('numo'),('cito'),('coco'),('sano'),('zulo'),('puño'),('romo'),('auto'),('ceño'),('faro'),
-('duro'),('seco'),('cero'),('coto'),('lazo'),('sebo'),('puño'),('soro'),('teja'),('tomo'),('mina'),('bozo'),
-('mira'),('codo'),('faro'),('pico'),('pito'),('moco'),('tuvo'),('mudo'),('foca'),('muro'),('beso'),('tuyo'),
-('cito'),('lujo'),('cena'),('cita');
+INSERT INTO wordle_english.words4 (word4)
+VALUES 
+('bird'),('moon'),('cake'),('rain'),('bend'),('duck'),('fall'),('east'),('game'),('note'),('roof'),
+('star'),('sand'),('work'),('lazy'),('cold'),('warm'),('cool'),('kind'),('good'),('read'),('book'),
+('talk'),('loud'),('soft'),('dark'),('chip'),('time'),('zone'),('echo'),('slow'),('fast'),('work'),
+('mind'),('fish'),('free'),('hero'),('idea'),('jump'),('love'),('mind'),('safe'),('rich'),('tall'),
+('thaw'),('golf'),('gift'),('easy'),('wish'),('race'),('join'),('land'),('half'),('spin'),('bind'),
+('trip'),('plan'),('seal'),('fair'),('bark'),('bend'),('hard'),('flip'),('mint'),('dust'),('jump'),
+('pour'),('plow'),('bump'),('belt'),('bias'),('buzz'),('clay'),('coil'),('dine'),('dirt'),('flux'),
+('full'),('fuze'),('glow'),('gold'),('guru'),('heal'),('heat'),('heel'),('helm'),('holy'),('hoot'),
+('iron'),('itch'),('jazz'),('jest'),('jolt'),('kale'),('lava'),('link'),('loon'),('loud'),('mast');
 
-
-/* Creación de tabla de wordle.palabras5 */
-CREATE TABLE wordle.palabras5 (
-    id_palabra5 INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    palabra5 VARCHAR (5) NOT NULL
+/* Creación de la tabla wordle_english.words5 */
+CREATE TABLE wordle_english.words5 (
+    id_word5 INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    word5 VARCHAR (5) NOT NULL
 );
-INSERT INTO wordle.palabras5 (palabra5)
-VALUES
-('panza'),('vence'),('arena'),('piesa'),('pista'),('aveso'),('pilar'),('tabas'),('linda'),('tenis'),('solos'),
-('maria'),('notas'),('duelo'),('mapas'),('rompe'),('copas'),('nieve'),('papel'),('forma'),('almas'),('risas'),
-('pasas'),('poses'),('airea'),('guion'),('fuego'),('culto'),('cansa'),('riela'),('fuera'),('medio'),('hondo'),
-('fuera'),('claro'),('crema'),('metao'),('fusil'),('vuela'),('viaja'),('falsa'),('paris'),('gordo'),('tonto'),
-('norte'),('cieno'),('acero'),('nuevo'),('flora'),('flora'),('color'),('riela'),('paria'),('cuota'),('doyla'),
-('sielo'),('botes'),('penas'),('dieta'),('nacar'),('peaje'),('siere'),('miras'),('floro'),('airea'),('piola'),
-('piras'),('ceros'),('sinon'),('piana'),('lodos'),('negra'),('lagos'),('cerdo'),('bulto'),('poros'),('figuo'),
-('metao'),('gozar'),('gatas'),('mosca'),('gatos'),('darla'),('feria'),('fanal'),('luzon'),('figuo'),('cubos'),
-('pasta'),('robar'),('chato'),('coros'),('darlo'),('halon'),('fiara'),('punto'),('arbol'),('calor'),('remos'),
-('pinta');
+INSERT INTO wordle_english.words5 (word5)
+VALUES 
+('angel'),('happy'),('cheer'),('blend'),('brave'),('clear'),('earth'),('flash'),('globe'),('grape'),
+('haste'),('humor'),('juice'),('laugh'),('lemon'),('light'),('music'),('novel'),('peace'),('power'),
+('queen'),('radio'),('sheep'),('smart'),('smile'),('sound'),('south'),('storm'),('sweet'),('today'),
+('tulip'),('unity'),('vocal'),('water'),('world'),('young'),('zebra'),('abide'),('acute'),('bliss'),
+('charm'),('clash'),('crisp'),('dandy'),('dream'),('eager'),('faith'),('fruit'),('glory'),('honor'),
+('lucky'),('magic'),('noble'),('pride'),('quiet'),('rebel'),('savor'),('skill'),('spice'),('trium'),
+('vivid'),('witty'),('blush'),('craft'),('dance'),('fancy'),('flirt'),('grand'),('heart'),('mirth'),
+('mural'),('neuro'),('pouch'),('quash'),('quill'),('roast'),('sauna'),('savor'),('scout'),('sleek'),
+('stoic'),('toast'),('trend'),('truce'),('unify'),('upend'),('vista'),('whims'),('yeast'),('yogic'),
+('zenon'),('abash'),('affix'),('azure'),('bloat'),('brisk'),('chord'),('civet'),('drain'),('facet'),
+('fiery'),('gleam'),('hound'),('husky'),('imply'),('jumbo'),('knell'),('licit'),('lofty'),('manic');
 
-/* Creación de tabla de wordle.palabras6 */
-CREATE TABLE wordle.palabras6 (
-    id_palabra6 INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    palabra6 VARCHAR (6) NOT NULL
+/* Creación de la tabla wordle_english.words6 */
+CREATE TABLE wordle_english.words6 (
+    id_word6 INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+    word6 VARCHAR (6) NOT NULL
 );
-INSERT INTO wordle.palabras6 (palabra6)
+INSERT INTO wordle_english.words6 (word6)
 VALUES
-('tomalo'),('diente'),('almasa'),('tobalo'),('blanco'),('huesos'),('mueble'),('cobras'),('lindas'),('alocar'),
-('tierra'),('notalo'),('morito'),('suerte'),('bailas'),('cortar'),('mandas'),('insect'),('cancas'),('buenas'),
-('soport'),('dioses'),('espero'),('villas'),('cuerpo'),('comida'),('medios'),('cancio'),('vuelas'),('comera'),
-('pasado'),('luzaro'),('nubosa'),('neuron'),('fuerza'),('avalar'),('cordal'),('blando'),('fanosa'),('casero'),
-('cosido'),('gatuno'),('carnos'),('friega'),('capelo'),('jovial'),('audito'),('frutal'),('espiro'),('rumiar'),
-('pulido'),('comico'),('parque'),('polino'),('fiasco'),('ludico'),('pulido'),('nacido'),('ramera'),('fijaro'),
-('centro'),('pastor'),('perten'),('pelele'),('cuerpo'),('pantos'),('rayano'),('surcos'),('perdio'),('mosque'),
-('necora'),('rocino'),('blando'),('mister'),('cudria'),('raices'),('movido'),('buzcan'),('risote'),('socavo'),
-('bienal'),('censar'),('pelado'),('indico'),('jornal'),('patata'),('redito'),('magico'),('decima'),('molest'),
-('picaro'),('rapido'),('pisano'),('dudosa'),('curaro'),('sobras'),('repelo'),('saludo'),('facial'),('cancer');
+('banana'),('beauty'),('breeze'),('butter'),('candle'),('carpet'),('castle'),('cheese'),('church'),('cookie'),
+('dragon'),('dynamo'),('falcon'),('floral'),('flower'),('future'),('guitar'),('hidden'),('honour'),('kitten'),
+('legend'),('magnet'),('master'),('mellow'),('mother'),('orange'),('pearls'),('pencil'),('pigeon'),('planet'),
+('puzzle'),('rabbit'),('raptor'),('rocket'),('shower'),('simple'),('spirit'),('spread'),('sunset'),('temple'),
+('thrill'),('tomato'),('travel'),('turtle'),('unique'),('valley'),('violet'),('vision'),('whisky'),('yellow'),
+('zigzag'),('zodiac'),('abound'),('accept'),('acumen'),('around'),('ascent'),('beacon'),('belong'),('bonito'),
+('calmly'),('carrot'),('caress'),('climax'),('cocker'),('decide'),('define'),('deluxe'),('eagles'),('elegan'),
+('elicit'),('eloqua'),('endure'),('facade'),('fathom'),('finish'),('frugal'),('global'),('guitar'),('habita'),
+('incept'),('ingest'),('intent'),('jovial'),('keenly'),('lively'),('marble'),('novice'),('obtain'),('purity'),
+('quaint'),('rarely'),('sincro'),('tender'),('umbra'),('united'),('vibrat'),('winnow'),('xenial'),('yearly'),
+('zealot'),('allege'),('bounty'),('captor'),('debunk'),('effort'),('fallen'),('gallop'),('hearty'),('insist');

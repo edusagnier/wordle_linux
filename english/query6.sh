@@ -1,4 +1,4 @@
 #!/bin/bash
 
-resultado=`mysql -u enti -penti -e "SELECT palabra6 FROM wordle.palabras6 ORDER BY RAND() LIMIT 1;" | grep -v 'palabra6'`
-echo $resultado
+result=`mysql -u enti -penti -e "SELECT word6 FROM wordle_english.words6 ORDER BY RAND() LIMIT 1;" | grep -v 'word6'`
+echo $result
