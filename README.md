@@ -8,9 +8,9 @@
 This repository contains instructions for installing MySQL on different distributions of Linux. Follow the steps corresponding to your distribution to complete the installation.
 
 # Index:
-1. [Distribution: Ubuntu](#Distribution-1:-Ubuntu)
-2. [Distribution: Fedora](#Distribution-2:-Fedora)
-3. [Distribution: Arch Linux](#-Distribution-3:-Arch-Linux)
+1. [Distribution: Ubuntu](#Distribution-1-Ubuntu)
+2. [Distribution: Fedora](#Distribution-2-Fedora)
+3. [Distribution: Arch Linux](#-Distribution-3-Arch-Linux)
 
 
 ### Distribution 1: Ubuntu
