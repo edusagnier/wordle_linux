@@ -28,3 +28,12 @@ This repository contains instructions for installing MySQL on different distribu
 
 7. Run the script wordle_database.sql
    - SOURCE /path/to/wordle_database.sql -
+   
+8. Give your user permition to the database/s
+  - CREATE USER 'user'@'localhost' IDENTIFIED BY 'password'; -
+  - GRANT ALL PRIVILEGES ON wordle.* TO 'user'@'localhost'; -
+  - GRANT ALL PRIVILEGES ON wordle_english.* TO 'user'@'localhost'; -
+
+9. Modify scripts to your user and password
+   - result=`mysql -u enti -penti -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" --> result=`mysql -u 'your_user' -p'your_password' -e "SELECT word3 FROM wordle_english.words3 ORDER BY RAND() LIMIT 1;" -
+   - 
