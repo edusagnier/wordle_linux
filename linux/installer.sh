@@ -21,9 +21,9 @@ if [ $USERID == 0 ];then
 			DISTR=`echo $PRETTY_NAME | awk '{print $1}' | tr '[:upper:]' '[:lower:]'`
 			if [[ "$DISTR" == "debian" || "$DISTR" == "ubuntu" || "$DISTR" == "kali" || "$DISTR" == "deepin" ]];then
 
-				#sudo apt update
-				#sudo apt install default-mysql-server
-				#sudo systemctl start mysql
+				sudo apt update
+				sudo apt install default-mysql-server
+				sudo systemctl start mysql
 
 				cat "$PATH_INGLISH_DB" | mysql
 				cat "$PATH_SPANISH_DB" | mysql
