@@ -1,5 +1,7 @@
 #!/bin/bash
-cd /home/edusagnier/wordle_linux/spanish/
+
+ACTUAL_PATH=`pwd`
+echo $ACTUAL_PATH
 
 RONDAS_GANADAS=0
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-cd /home/edusagnier/wordle/english/
 
 ROUNDS_WON=0
 
@@ -105,7 +104,7 @@ REPEAT() {
 		echo ""
 	fi
 
-	if [[ $REPEAT == "yes" || $REPEAT == "yes" || $REPEAT == "YES" ]];then
+	if [[ $REPEAT == "Yes" || $REPEAT == "yes" || $REPEAT == "YES" ]];then
 		read -p "Do you want the same level of letters? yes o No: " SAME_LEVEL
 		echo ""
 

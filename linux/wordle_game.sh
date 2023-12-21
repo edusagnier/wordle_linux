@@ -7,11 +7,13 @@ echo "==========================================================================
 read -p "Play in English (EN) / Jugar en Español (ES): " IDIOMA
 
 if [[ $IDIOMA == "EN" || $IDIOMA == "en" || $IDIOMA == "En" || $IDIOMA == "eN" ]];then
-	./english/wordle_game_english.sh
+	cd english/
+	/wordle_game_english.sh
 
 
 elif [[ $IDIOMA == "ES" || $IDIOMA == "es" || $IDIOMA == "Es" || $IDIOMA == "eS" ]];then
-	./spanish/wordle_game_spanish.sh
+	cd spanish/
+	./wordle_game_spanish.sh
 
 else
 	exit 1
