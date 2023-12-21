@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 ACTUAL_PATH=`pwd`
 echo $ACTUAL_PATH
 
@@ -37,57 +39,73 @@ SELECIONAR_NIVEL() {
 	done
 }
 
+COLOREAR_LETRA() {
+    for (( i=0; i<${#RESPUESTA}; i++ )); do
+    	LETRA="${RESPUESTA:$i:1}"
+        LETRA_SECRETA="${PALABRA:$i:1}"
+        if [ "${LETRA}" == "${LETRA_SECRETA}" ]; then
+        	echo -e "\e[32m${LETRA}\e[0m"  # Letra en verde si está en la posición correcta
+        elif [[ "${PALABRA}" == *"${LETRA}"* ]]; then
+            echo -e "\e[33m${LETRA}\e[0m"  # Letra en naranja si está en la palabra pero no en la posición correcta
+        else
+            echo "${LETRA}"  # Letra normal si no está en la palabra
+        fi
+	done
+}
 
 ELIGIR_PALABRA() {
 	if [ $LEVEL -eq 3 ];then
 		PALABRA=`bash query3.sh`
+		INTENTOS=5
 
 	elif [ $LEVEL -eq 4 ];then
     	PALABRA=`bash query4.sh`
+		INTENTOS=6
 
 	elif [ $LEVEL -eq 5 ];then
     	PALABRA=`bash query5.sh`
+		INTENTOS=6
 
 	elif [ $LEVEL -eq 6 ];then
     	PALABRA=`bash query6.sh`
+		INTENTOS=7
 	fi
 
+	echo "$PALABRA" #CHEATMODE
 
-	echo "$PALABRA"
 }
 
-
 JUEGO() {
-    INTENTOS=5
-    while [[ $INTENTOS -gt 0 && $RESPUESTA != $PALABRA ]]
+    
+	while [[ $INTENTOS -gt 0 ]]
 	do
-        read -p "Ingresa tu RESPUESTA: " RESPUESTA 
-
+    	echo "" && echo "Numeros de intentos que tienes: $INTENTOS"
+		read -p "Ingresa tu RESPUESTA: " RESPUESTA 
+		RESPUESTA=`echo $RESPUESTA |  tr '[:upper:]' '[:lower:]'`
+		
         if [ ${#RESPUESTA} -ne ${#PALABRA} ]; then
-            echo "El intento debe tener exactamente ${#PALABRA} LETRAs."
+            echo "El intento debe tener exactamente ${#PALABRA} LETRAS."
             continue
         fi
 
-        for (( i=0; i<${#RESPUESTA}; i++ )); do
-            LETRA="${RESPUESTA:$i:1}"
-            LETRA_SECRETA="${PALABRA:$i:1}"
-            if [ "${LETRA}" == "${LETRA_SECRETA}" ]; then
-                echo -e "\e[32m${LETRA}\e[0m"  # Letra en verde si está en la posición correcta
-            elif [[ "${PALABRA}" == *"${LETRA}"* ]]; then
-                echo -e "\e[33m${LETRA}\e[0m"  # Letra en naranja si está en la palabra pero no en la posición correcta
-            else
-                echo "${LETRA}"  # Letra normal si no está en la palabra
-            fi
-        done
+		if [ "$RESPUESTA" == "$PALABRA" ];then
+			COLOREAR_LETRA
+			GANADO='true'
+			break
+		fi
 
+		COLOREAR_LETRA		
+		
 		INTENTOS=$((INTENTOS - 1))
+		echo "Intentos restantes: $INTENTOS"
+
     done
+
 	if [ $INTENTOS -eq 0 ];then
 		echo "Se han gastado tus intentos i la palabra era: $PALABRA"
 		GANADO='false'
 	else
-		echo "Has accertado la palabra secreta: $PALABRA "
-		GANADO='true' 
+		echo "Has accertado la palabra secreta: $PALABRA " 
 		PARTIDAS_GANADAS=$((PARTIDAS_GANADAS + 1))
 		echo ""
 		echo ""

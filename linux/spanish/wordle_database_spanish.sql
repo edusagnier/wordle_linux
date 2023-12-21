@@ -18,11 +18,11 @@ INSERT INTO wordle.palabras3 (palabra3)
 VALUES
 ('sol'),('mes'),('luz'),('mar'),('pan'),('pez'),('sol'),('pie'),('dos'),('rey'),('sal'),('cal'),('mal'),
 ('feo'),('ira'),('era'),('son'),('mas'),('bue'),('vos'),('mil'),('ver'),('dar'),('vez'),('tan'),('uno'),
-('dos'),('feo'),('año'),('dar'),('ray'),('sol'),('uní'),('fue'),('soy'),('zoo'),('mal'),('soy'),('sol'),
-('ida'),('dio'),('fea'),('dar'),('ser'),('día'),('dos'),('sol'),('mar'),('sal'),('hoy'),('cal'),('par'),
+('dos'),('feo'),('año'),('dar'),('ray'),('sol'),('uni'),('fue'),('soy'),('zoo'),('mal'),('soy'),('sal'),
+('ida'),('dio'),('fea'),('dar'),('ser'),('dia'),('dos'),('sol'),('mar'),('sal'),('hoy'),('cal'),('par'),
 ('rey'),('rey'),('ser'),('uva'),('oro'),('pan'),('fue'),('rey'),('mes'),('luz'),('mes'),('feo'),('ves'),
-('dio'),('era'),('rey'),('son'),('dio'),('sol'),('yog'),('mes'),('dos'),('mal'),('año'),('vos'),('mes'),
-('sol'),('mil'),('vas'),('vez'),('luz'),('sol'),('vez'),('día'),('dio'),('ves'),('uní'),('más'),('son'),
+('dio'),('era'),('rey'),('son'),('dio'),('sol'),('yog'),('mes'),('dos'),('mal'),('año'),('vos'),('pis'),
+('sol'),('mil'),('vas'),('vez'),('luz'),('sol'),('vez'),('día'),('dio'),('ves'),('uno'),('mas'),('dar'),
 ('ray'),('son'),('era'),('dos'),('dar'),('mes'),('yog'),('mar'),('era');
 
 
@@ -36,9 +36,9 @@ VALUES
 ('sola'),('mesa'),('mora'),('malo'),('pana'),('piel'),('paz'),('puas'),('vino'),('pedo'),('puro'),('pino'),
 ('bien'),('iran'),('cafe'),('fino'),('pavo'),('solo'),('cien'),('nuez'),('muro'),('auto'),('bufo'),('riño'),
 ('pozo'),('sano'),('zeta'),('vara'),('duna'),('coco'),('tina'),('lona'),('mudo'),('duro'),('años'),('alma'),
-('lomo'),('dios'),('roca'),('miga'),('pila'),('ruín'),('judo'),('burl'),('será'),('lote'),('suda'),('feto'),
+('lomo'),('dios'),('roca'),('miga'),('pila'),('ruín'),('judo'),('burl'),('sera'),('lote'),('suda'),('feto'),
 ('seda'),('dedo'),('cero'),('vaso'),('buho'),('zumo'),('elmo'),('loco'),('fosa'),('vino'),('moho'),('cuna'),
-('ruin'),('será'),('numo'),('cito'),('coco'),('sano'),('zulo'),('puño'),('romo'),('auto'),('ceño'),('faro'),
+('ruin'),('sera'),('numo'),('cito'),('coco'),('sano'),('zulo'),('puño'),('romo'),('auto'),('ceño'),('faro'),
 ('duro'),('seco'),('cero'),('coto'),('lazo'),('sebo'),('puño'),('soro'),('teja'),('tomo'),('mina'),('bozo'),
 ('mira'),('codo'),('faro'),('pico'),('pito'),('moco'),('tuvo'),('mudo'),('foca'),('muro'),('beso'),('tuyo'),
 ('cito'),('lujo'),('cena'),('cita');
