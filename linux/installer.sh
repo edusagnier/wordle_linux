@@ -24,6 +24,8 @@ if [ $USERID == 0 ];then
 				sudo apt update
 				sudo apt install default-mysql-server
 				sudo systemctl start mysql
+    				sleep 2
+				clear
 
 				cat "$PATH_INGLISH_DB" | mysql
 				cat "$PATH_SPANISH_DB" | mysql
