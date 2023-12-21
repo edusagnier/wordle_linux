@@ -56,6 +56,42 @@ if [ $USERID == 0 ];then
 					./wordle_game.sh
 				fi
 				exit 0
+    			elif [[ "$DISTR" == "fedora" || "$DISTR" == "centos" || "$DISTR" == "rocky" ]]
+       				
+	   			sudo dnf update -y
+	   			sudo dnf install community-mysql-server -y
+       				sudo systemctl start mysqld
+    				sleep 2
+				clear
+
+				cat "$PATH_INGLISH_DB" | mysql
+				cat "$PATH_SPANISH_DB" | mysql
+    				echo "Now we are going to insert User & Password for the database, it doesn't need to be very complicated"
+				read -p "Insert a username for the Database user: " username
+				read -p "Insert a password for the Database user: " password
+
+				echo $username > credentials.txt
+				echo $password >> credentials.txt
+				echo "Saved on credentials.txt"
+
+				echo "CREATE USER '"$username"'@'localhost' IDENTIFIED BY '"$password"';" | mysql
+				echo "MySQL user created" && echo "SELECT user, host FROM mysql.user;" | mysql
+
+#				echo "DROP USER '"$username"'@'localhost'" | mysql
+#				echo MySQL user deleted && echo "SELECT user, host FROM mysql.user;" | mysql
+
+				echo "GRANT ALL PRIVILEGES ON wordle.* TO '"$username"'@'localhost';" | mysql
+				echo "GRANT ALL PRIVILEGES ON wordle_english.* TO '"$username"'@'localhost';" | mysql
+				echo "Privileges on your user given on databases"
+				sleep 5
+				clear
+				read -p "Want to play now? (yes o no) " answer
+				ANSWER=`echo $answer | tr '[:upper:]' '[:lower:]'`
+
+				if [ "$ANSWER" == "yes" ];then
+					./wordle_game.sh
+				fi
+				exit 0
 			fi
     	else
         	echo "Unable to determine the distribution."
