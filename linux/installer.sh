@@ -56,7 +56,7 @@ if [ $USERID == 0 ];then
 					./wordle_game.sh
 				fi
 				exit 0
-    			elif [[ "$DISTR" == "fedora" || "$DISTR" == "centos" || "$DISTR" == "rocky" ]]
+    			elif [[ "$DISTR" == "fedora" || "$DISTR" == "centos" || "$DISTR" == "rocky" ]];then
        				
 	   			sudo dnf update -y
 	   			sudo dnf install community-mysql-server -y
