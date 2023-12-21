@@ -21,9 +21,9 @@ if [ $USERID == 0 ];then
 			DISTR=`echo $PRETTY_NAME | awk '{print $1}' | tr '[:upper:]' '[:lower:]'`
 			if [[ "$DISTR" == "debian" || "$DISTR" == "ubuntu" || "$DISTR" == "kali" || "$DISTR" == "deepin" ]];then
 
-				sudo apt update -y
-				sudo apt install default-mysql-server -y
-				sudo systemctl start mysql
+				apt update -y
+				apt install default-mysql-server -y
+				systemctl start mysql
     				sleep 2
 				clear
 
@@ -58,9 +58,9 @@ if [ $USERID == 0 ];then
 				exit 0
     			elif [[ "$DISTR" == "fedora" || "$DISTR" == "centos" || "$DISTR" == "rocky" ]];then
        				
-	   			sudo dnf update -y
-	   			sudo dnf install community-mysql-server -y
-       				sudo systemctl start mysqld
+	   			dnf update -y
+	   			dnf install community-mysql-server -y
+       				systemctl start mysqld
     				sleep 2
 				clear
 
