@@ -21,8 +21,8 @@ if [ $USERID == 0 ];then
 			DISTR=`echo $PRETTY_NAME | awk '{print $1}' | tr '[:upper:]' '[:lower:]'`
 			if [[ "$DISTR" == "debian" || "$DISTR" == "ubuntu" || "$DISTR" == "kali" || "$DISTR" == "deepin" ]];then
 
-				sudo apt update
-				sudo apt install default-mysql-server
+				sudo apt update -y
+				sudo apt install default-mysql-server -y
 				sudo systemctl start mysql
     				sleep 2
 				clear
