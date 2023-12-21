@@ -124,7 +124,7 @@ REPEAT() {
 			exit 0
 		fi
 	else
-		echo -e ""$GREEN"Thanks for playing wordle!"
+		echo -e ""$GREEN"Thanks for playing wordle!"$NC""
 		exit 0
 	fi
 
