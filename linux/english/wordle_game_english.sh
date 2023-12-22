@@ -47,7 +47,7 @@ SELECT_WORD() {
 
 	if [ $LEVEL -eq 3 ];then
 		WORD=`bash query3.sh`
-		TIRES=5
+		TRIES=5
 
 	elif [ $LEVEL -eq 4 ];then
     	WORD=`bash query4.sh`

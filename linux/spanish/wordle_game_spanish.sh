@@ -23,14 +23,16 @@ echo -e ""$BLUE"  @edusagnier$NC"
 echo ""
 
 SELECIONAR_NIVEL() {
-	echo "Con cuantas LETRAs quieres quieres la palabra"
-	echo "---------------------------------------------"
+	echo -e ""$RED"Con cuantas LETRAs quieres quieres la palabra"
+	echo -e "---------------------------------------------"$NC""
 	echo "         3, (3 Letras, easy level)"
 	echo "         4, (4 Letras, less easy level)"
 	echo "         5, (5 Letras, normal wordle)"
 	echo "         6, (6 Letras hard level)"
-	echo "---------------------------------------------"
-	read -p "Ingresa el nivel que quieres: " LEVEL
+	echo -e ""$RED"---------------------------------------------"
+
+	echo -e "Ingresa el nivel que quieres: "$NC"" 
+	read LEVEL
 
 	while [[ $LEVEL != 3 && $LEVEL != 4 && $LEVEL != 5 && $LEVEL != 6 ]]
 	do
