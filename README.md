@@ -5,13 +5,15 @@ This is a simple command-line game of Wordle implemented in Bash and SQL.
 
 ## Installation
 
-- Make sure you have Bash and SQL installed on your system.
-- Download the `installer.sh` script.
+- Download the the repository:
+	```bash
+	git clone https://github.com/edusagnier/wordle_linux.git
+	```
 - Give the script execution permissions with the command:
     ```bash
     chmod +x installer.sh
     ```
-- Run the installer script:
+- Run the installer script as **ROOT**:
     ```bash
     ./installer.sh
     ```
@@ -19,7 +21,9 @@ This is a simple command-line game of Wordle implemented in Bash and SQL.
 
 ## How to Play
 
-Once the installation is complete, you can start the game by running the main script. Have fun playing Wordle!
+Once the installation is complete, you would be ask if you want to play.
+In case another time you want to start the game by running the main script `wordle_game.sh`. 
+**Have fun playing Wordle!**
 
 
 
