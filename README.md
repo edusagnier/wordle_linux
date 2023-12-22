@@ -17,8 +17,10 @@ This is a simple command-line game of Wordle implemented in Bash and SQL.
     ```bash
     ./installer.sh
     ```
-> .[!IMPORTANT].
+> [!IMPORTANT]
 > The installer will install on Debian and RedHat Distro.
+> [!WARNING]
+> In the case of Debian needs the **apt** package managment and Redhat will need **dnf** 
 
 - Follow the on-screen instructions to complete the installation and configuration process.
 
