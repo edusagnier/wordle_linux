@@ -3,7 +3,7 @@
 
 This is a simple command-line game of Wordle implemented in Bash and SQL.
 
-## Installation
+## Installation on linux
 
 - Download the the repository:
 	```bash
@@ -17,6 +17,9 @@ This is a simple command-line game of Wordle implemented in Bash and SQL.
     ```bash
     ./installer.sh
     ```
+> .[!IMPORTANT].
+> The installer will install on Debian and RedHat Distro.
+
 - Follow the on-screen instructions to complete the installation and configuration process.
 
 ## How to Play
