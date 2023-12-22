@@ -3,7 +3,7 @@
 clear
 
 ACTUAL_PATH=`pwd`
-echo $ACTUAL_PATH
+#echo $ACTUAL_PATH
 
 RONDAS_GANADAS=0
 
@@ -39,21 +39,8 @@ SELECIONAR_NIVEL() {
 	done
 }
 
-COLOREAR_LETRA() {
-    for (( i=0; i<${#RESPUESTA}; i++ )); do
-    	LETRA="${RESPUESTA:$i:1}"
-        LETRA_SECRETA="${PALABRA:$i:1}"
-        if [ "${LETRA}" == "${LETRA_SECRETA}" ]; then
-        	echo -e "\e[32m${LETRA}\e[0m"  # Letra en verde si está en la posición correcta
-        elif [[ "${PALABRA}" == *"${LETRA}"* ]]; then
-            echo -e "\e[33m${LETRA}\e[0m"  # Letra en naranja si está en la palabra pero no en la posición correcta
-        else
-            echo "${LETRA}"  # Letra normal si no está en la palabra
-        fi
-	done
-}
-
 ELIGIR_PALABRA() {
+
 	if [ $LEVEL -eq 3 ];then
 		PALABRA=`bash query3.sh`
 		INTENTOS=5
@@ -77,11 +64,11 @@ ELIGIR_PALABRA() {
 
 JUEGO() {
     
-	while [[ $INTENTOS -gt 0 ]]
+	while [ $INTENTOS -gt 0 ]
 	do
     	echo "" && echo "Numeros de intentos que tienes: $INTENTOS"
 		read -p "Ingresa tu RESPUESTA: " RESPUESTA 
-		RESPUESTA=`echo $RESPUESTA |  tr '[:upper:]' '[:lower:]'`
+		RESPUESTA=`echo $RESPUESTA | tr '[:upper:]' '[:lower:]'`
 		
         if [ ${#RESPUESTA} -ne ${#PALABRA} ]; then
             echo "El intento debe tener exactamente ${#PALABRA} LETRAS."
@@ -151,6 +138,21 @@ REPETIR() {
 
 	
 }
+
+COLOREAR_LETRA() {
+    for (( i=0; i<${#RESPUESTA}; i++ )); do
+        LETRA="${RESPUESTA:$i:1}"
+        LETRA_SECRETA="${PALABRA:$i:1}"
+        if [ "${LETRA}" == "${LETRA_SECRETA}" ]; then
+            echo -e "\e[32m${LETRA}\e[0m"  # Letra en verde si está en la posición correcta
+        elif [[ "${PALABRA}" == *"${LETRA}"* ]]; then
+            echo -e "\e[33m${LETRA}\e[0m"  # Letra en naranja si está en la palabra pero no en la posición correcta
+        else
+            echo "${LETRA}"  # Letra normal si no está en la palabra
+        fi
+    done
+}
+
 SELECIONAR_NIVEL
 ELIGIR_PALABRA
 JUEGO

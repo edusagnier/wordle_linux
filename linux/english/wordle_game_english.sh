@@ -1,5 +1,10 @@
 #!/bin/bash
 
+clear
+
+ACTUAL_PATH=`pwd`
+#echo $ACUTAL_PATH
+
 ROUNDS_WON=0
 
 RED='\033[0;31m'
@@ -18,14 +23,17 @@ echo -e ""$BLUE"  @edusagnier$NC"
 echo ""
 
 SELECT_LEVEL() {
-	echo "How many letters do you want in your word"
-	echo "---------------------------------------------"
+	
+	echo -e ""$RED"How many letters do you want in your word"
+	echo -e "---------------------------------------------"$NC""
 	echo "         3, (3 Letters, easy level)"
 	echo "         4, (4 Letters, less easy level)"
 	echo "         5, (5 Letters, normal wordle)"
 	echo "         6, (6 Letters hard level)"
-	echo "---------------------------------------------"
-	read -p "Enter the level that you want: " LEVEL
+	echo -e ""$RED"---------------------------------------------"
+	
+	echo -e "Enter the level that you want: "$NC"" 
+	read LEVEL
 
 	while [[ $LEVEL != 3 && $LEVEL != 4 && $LEVEL != 5 && $LEVEL != 6 ]]
 	do
@@ -36,55 +44,60 @@ SELECT_LEVEL() {
 
 
 SELECT_WORD() {
+
 	if [ $LEVEL -eq 3 ];then
-	WORD=`bash query3.sh`
+		WORD=`bash query3.sh`
+		TIRES=5
 
 	elif [ $LEVEL -eq 4 ];then
     	WORD=`bash query4.sh`
+		TRIES=6
 
 	elif [ $LEVEL -eq 5 ];then
     	WORD=`bash query5.sh`
+		TRIES=6
 
 	elif [ $LEVEL -eq 6 ];then
     	WORD=`bash query6.sh`
+		TRIES=7
 	fi
 
 
-	echo "$WORD"
+	echo "$WORD" #CHEATMODE
 }
 
 
 GAME() {
-	TRIES=5
-	while [[ $TRIES -gt 0 && $ANSWER != $WORD ]]
+
+	while [ $TRIES -gt 0 ]
 	do
-        	read -p "Enter your guess: " ANSWER 
+    
+		echo "" && echo "Numbers of tries that you have: $TRIES"
+		read -p "Enter your guess: " ANSWER 
+		
+		ANSWER=`echo $ANSWER | tr '[:upper]' '[:lower]'`
 
 		if [ ${#ANSWER} -ne ${#WORD} ]; then
 			echo "The guess has to have exactacly ${#WORD} letters."
-            		continue
-        	fi
+           	continue
+        fi
 
-        for (( i=0; i<${#ANSWER}; i++ )); do
-            LETTER="${ANSWER:$i:1}"
-            LETTER_SECRETA="${WORD:$i:1}"
-            if [ "${LETTER}" == "${LETTER_SECRETA}" ]; then
-                echo -e "\e[32m${LETTER}\e[0m"  # Letra en verde si está en la posición correcta
-            elif [[ "${WORD}" == *"${LETTER}"* ]]; then
-                echo -e "\e[33m${LETTER}\e[0m"  # Letra en naranja si está en la palabra pero no en la posición correcta
-            else
-                echo "${LETTER}"  # Letra normal si no está en la palabra
-            fi
-        done
+		if [ $ANSWER == $WORD ];then
+			LETTER_COLOUR
+			WIN='true'
+			break
+		fi
+		
+		LETTER_COLOUR
 
 		TRIES=$((TRIES - 1))
     done
+
 	if [ $TRIES -eq 0 ];then
 		echo "You have used all your attempts and the word was: $WORD"
 		WON='false'
 	else
 		echo "You haved guessed the word correctly: $WORD "
-		WON='true' 
 		ROUNDS_WON=$((ROUNDS_WON + 1))
 		echo ""
 		echo ""
@@ -92,6 +105,7 @@ GAME() {
 }
 
 REPEAT() {
+
 	if [ $WON = 'false' ];then
 		echo "You haved lost, but do you want to try again?"
 		echo ":You had this many games won: $ROUNDS_WON"
@@ -117,7 +131,7 @@ REPEAT() {
 		elif [[ $SAME_LEVEL == "no" || $SAME_LEVEL == "No" || $SAME_LEVEL == "NO" ]]; then
 			SELECT_LEVEL
 			SELECT_WORD
-            		GAME
+            GAME
 			REPEAT
 			
 		else 
@@ -130,6 +144,24 @@ REPEAT() {
 
 	
 }
+LETTER_COLOUR() {
+
+	for (( i=0; i<${#ANSWER}; i++ )); do
+    	LETTER="${ANSWER:$i:1}"
+        LETTER_SECRETA="${WORD:$i:1}"
+        if [ "${LETTER}" == "${LETTER_SECRETA}" ]; then
+        	echo -e "\e[32m${LETTER}\e[0m"  # Letra en verde si está en la posición correcta
+        elif [[ "${WORD}" == *"${LETTER}"* ]]; then
+            echo -e "\e[33m${LETTER}\e[0m"  # Letra en naranja si está en la palabra pero no en la posición correcta
+        else
+            echo "${LETTER}"  # Letra normal si no está en la palabra
+        fi
+	done
+
+}
+
+
+
 SELECT_LEVEL
 SELECT_WORD
 GAME
