@@ -7,8 +7,8 @@
 
 There's a installer script that should install it a config all the neccesary.
 
-- chomod u+x installer.sh-+
-- ./installer.sh -
+- chomod u+x installer.sh
+- ./installer.sh
 
 # Index:
 1. [Distribution: Ubuntu](#Distribution-1-Ubuntu)
