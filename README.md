@@ -21,8 +21,8 @@ This is a simple command-line game of Wordle implemented in Bash and SQL.
 
 ## How to Play
 
-Once the installation is complete, you would be ask if you want to play.
-In case another time you want to start the game by running the main script `wordle_game.sh`. 
+Once the installation is complete, you would be ask if you want to play. <br>
+In case another time you want to start the game by running the main script `wordle_game.sh`. <br>
 **Have fun playing Wordle!**
 
 
