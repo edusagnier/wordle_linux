@@ -31,6 +31,20 @@ Once the installation is complete, you would be ask if you want to play. <br>
 To start the game after installation run the main script `wordle_game.sh`. <br>
 **Have fun playing Wordle!**
 
+## Install Manualy
 
+- Need to install mysql depending on your distribution. Start the sql service <br>
 
+- Later in **root** go to the .sql files and `cat file1.sql | mysql` and edit credentials.txt to user && password. <br>
+
+- Log in into mysql (still as root) 
+	```bash
+		mysql 
+	```
+and create user and give permitions to that user on the databases created
+	```sql
+		CREATE USER '"$username"'@'localhost' IDENTIFIED BY '"$password"';
+		GRANT ALL PRIVILEGES ON wordle.* TO '"$username"'@'localhost';
+		GRANT ALL PRIVILEGES ON wordle_english.* TO '"$username"'@'localhost';
+	```
 
