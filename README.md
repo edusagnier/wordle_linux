@@ -3,6 +3,12 @@
 
 This is a simple command-line game of Wordle implemented in Bash and SQL.
 
+## Index
+
+- [Auto-installation Linux](#Installation-on-linux)
+- [How to play](#How-to-play)
+- [Install Manualy](#Install-manually)
+
 ## Installation on linux
 
 - Download the the repository:
