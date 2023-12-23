@@ -7,7 +7,7 @@ This is a simple command-line game of Wordle implemented in Bash and SQL.
 
 - [Auto-installation Linux](#Installation-on-linux)
 - [How to play](#How-to-play)
-- [Install Manualy](#Install-manually)
+- [Install Manualy](#Install-manualy)
 
 ## Installation on linux
 
