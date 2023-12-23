@@ -39,9 +39,9 @@ To start the game after installation run the main script `wordle_game.sh`. <br>
 
 ## Install Manualy
 
-- Need to install mysql depending on your distribution. Start the sql service <br>
+- Need to install mysql depending on your distribution & Start the sql service <br>
 
-- Later in **root** go to the .sql files and `cat file1.sql | mysql` and edit credentials.txt to user && password. <br>
+- Later in **root** go to the .sql files and `cat file1.sql | mysql` and edit `credentials.txt` to user && password. <br>
 
 - Log in into mysql (still as root) 
 	```bash
