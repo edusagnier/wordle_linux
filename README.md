@@ -39,12 +39,12 @@ To start the game after installation run the main script `wordle_game.sh`. <br>
 
 - Log in into mysql (still as root) 
 	```bash
-		mysql 
+	mysql 
 	```
-and create user and give permitions to that user on the databases created
+- and create user and give permitions to that user on the databases created <br>
 	```sql
-		CREATE USER '"$username"'@'localhost' IDENTIFIED BY '"$password"';
-		GRANT ALL PRIVILEGES ON wordle.* TO '"$username"'@'localhost';
-		GRANT ALL PRIVILEGES ON wordle_english.* TO '"$username"'@'localhost';
+	CREATE USER '"$username"'@'localhost' IDENTIFIED BY '"$password"'; 
+	GRANT ALL PRIVILEGES ON wordle.* TO '"$username"'@'localhost';
+	GRANT ALL PRIVILEGES ON wordle_english.* TO '"$username"'@'localhost';
 	```
 
