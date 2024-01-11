@@ -13,10 +13,13 @@ USERID=`id -u`
 
 if [ $USERID == 0 ];then
 	if [ -f /etc/os-release ]; then
-    	source /etc/os-release
+	   	source /etc/os-release
+
     	if [ -n "$PRETTY_NAME" ]; then
-        	echo "Distribution: $PRETTY_NAME"
+        	
+			echo "Distribution: $PRETTY_NAME"
 			DISTR=`echo $PRETTY_NAME | awk '{print $1}' | tr '[:upper:]' '[:lower:]'`
+
 			if [[ "$DISTR" == "debian" || "$DISTR" == "ubuntu" || "$DISTR" == "kali" || "$DISTR" == "deepin" ]];then
 				
 				echo "DROP DATABASE IF EXISTS wordle" | mysql
@@ -58,7 +61,7 @@ if [ $USERID == 0 ];then
 #				echo MySQL user deleted && echo "SELECT user, host FROM mysql.user;" | mysql
 
 				clear
-				apt remove default-mysql-server -y
+				dnf remove default-mysql-server -y
 
 
 				exit 0
