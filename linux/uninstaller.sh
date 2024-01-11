@@ -42,7 +42,23 @@ if [ $USERID == 0 ];then
 
 			elif [[ "$DISTR" == "fedora" || "$DISTR" == "centos" || "$DISTR" == "rocky" ]];then
        				
+				echo "DROP DATABASE IF EXISTS wordle" | mysql
+				echo "DROP DATABASE IF EXISTS wordle_english" | mysql
 				
+				sleep 2
+				clear
+
+				username=`cat credentials.txt | head -n 1`
+				
+				echo "DROP USER '"$username"'@'localhost'"  | mysql
+				echo "MySQL user Deleted" && echo "SELECT user, host FROM mysql.user;" | mysql
+				
+				sleep 3
+#				echo "DROP USER '"$username"'@'localhost'" | mysql
+#				echo MySQL user deleted && echo "SELECT user, host FROM mysql.user;" | mysql
+
+				clear
+				apt remove default-mysql-server -y
 
 
 				exit 0
