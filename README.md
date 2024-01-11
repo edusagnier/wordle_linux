@@ -53,4 +53,5 @@ To start the game after installation run the main script `wordle_game.sh`. <br>
 	GRANT ALL PRIVILEGES ON wordle.* TO '"$username"'@'localhost';
 	GRANT ALL PRIVILEGES ON wordle_english.* TO '"$username"'@'localhost';
 	```
+ - Later on the **credentials.txt** add the same user and password used for the data base.
 
