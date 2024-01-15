@@ -38,10 +38,16 @@ if [ $USERID == 0 ];then
 #				echo MySQL user deleted && echo "SELECT user, host FROM mysql.user;" | mysql
 
 				clear
-				apt remove default-mysql-server -y
-    			
-	
-				exit 0
+
+				read -p "Do you want to remove the mysql server? yes/no" ANSWER
+				ANSWER=`echo "$ANSWER" |  tr '[:upper:]' '[:lower:]'`
+				
+				if [ $ANSWER == "yes" ];then
+					
+					apt remove default-mysql-server -y
+    			else
+					exit 0
+				fi
 
 			elif [[ "$DISTR" == "fedora" || "$DISTR" == "centos" || "$DISTR" == "rocky" ]];then
        				
@@ -61,6 +67,10 @@ if [ $USERID == 0 ];then
 #				echo MySQL user deleted && echo "SELECT user, host FROM mysql.user;" | mysql
 
 				clear
+
+				read -p "Do you want to remove the mysql server? yes/no" ANSWER
+                ANSWER=`echo "$ANSWER" |  tr '[:upper:]' '[:lower:]'`
+
 				dnf remove default-mysql-server -y
 
 
